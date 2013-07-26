@@ -1,0 +1,22 @@
+%h1 Welcome
+%p  Sistema de timbres
+%p= link_to "Para generar un timbrazo presione aquí", new_ring_path()
+
+
+%table#table
+  %thead
+    %tr
+      %th Nombre
+      %th Mensaje
+      %th Fecha/hora
+      %th
+      %th
+      %th
+  %tbody
+    - @rings.each do |ring|
+      %tr
+        %td= ring.name
+        %td= ring.description
+        %td= ring.created_at
+        %td= link_to "Editar", edit_ring_path(ring)
+        %td= link_to "Borrar", ring_path(ring), :method => :delete, :confirm => '¿Esta seguro?'
