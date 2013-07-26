@@ -1,0 +1,10 @@
+%p
+= form_for @ring do |f|
+  = f.label :name, 'Nombre'
+  = f.text_field :name
+  %br
+  = f.label :description, 'Mensaje'
+  = f.text_field :description
+  %br
+  %p= f.submit 'Registrar'
+%p
