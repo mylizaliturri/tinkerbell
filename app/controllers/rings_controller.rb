@@ -7,9 +7,9 @@ class RingsController < ApplicationController
     @ring=Ring.new(params[:ring])
     if @ring.save
       begin
-        Twitter.update("@turbogeek81 "+@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
+        Twitter.update(@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
       rescue Exception
-        p "error en twitt|er"
+        p "error en twitter"
       end
       redirect_to root_url, notice: 'Success'
     else
