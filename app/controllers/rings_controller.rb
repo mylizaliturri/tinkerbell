@@ -6,6 +6,11 @@ class RingsController < ApplicationController
   def create
     @ring=Ring.new(params[:ring])
     if @ring.save
+      begin
+        Twitter.update(@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
+      rescue Exception
+        p "error en twitter"
+      end
       redirect_to root_url, notice: 'Success'
     else
       render action: 'new'
