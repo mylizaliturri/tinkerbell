@@ -2,7 +2,6 @@
 %p  Sistema de timbres
 %p= link_to "Para generar un timbrazo presione aquí", new_ring_path()
 
-
 %table#table
   %thead
     %tr
@@ -20,3 +19,5 @@
         %td= ring.created_at
         %td= link_to "Editar", edit_ring_path(ring)
         %td= link_to "Borrar", ring_path(ring), :method => :delete, :confirm => '¿Esta seguro?'
+
+
