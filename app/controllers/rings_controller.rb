@@ -1,6 +1,7 @@
-class RingsController < ApplicationController
+class RingsController< ApplicationController
   def new
     @ring=Ring.new()
+
   end
 
   def create
@@ -11,7 +12,7 @@ class RingsController < ApplicationController
       rescue Exception
         p "error en twitter"
       end
-      redirect_to root_url, notice: 'Success'
+      redirect_to root_url, :notice => 'Success'
     else
       render action: 'new'
     end
@@ -33,7 +34,7 @@ class RingsController < ApplicationController
   def destroy
     @ring = Ring.find(params[:id])
     @ring.destroy
-    redirect_to root_path, notice: 'El timbre fue eliminado'
+    redirect_to root_path, :notice => 'El timbre fue eliminado'
   end
 
   def destroy_all

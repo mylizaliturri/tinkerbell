@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RingsControllerTest < ActionController::TestCase
+class RingControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

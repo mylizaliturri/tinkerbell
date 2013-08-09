@@ -1,6 +1,7 @@
 %h1 Welcome
 %p  Sistema de timbres
 %p= link_to "Para generar un timbrazo presione aquí", new_ring_path()
+%p= link_to "Para registrar una ubicacion de click aquí", new_location_path()
 
 %table#table
   %thead
@@ -20,4 +21,24 @@
         %td= link_to "Editar", edit_ring_path(ring)
         %td= link_to "Borrar", ring_path(ring), :method => :delete, :confirm => '¿Esta seguro?'
 
-
+%table#table
+  %thead
+    %tr
+      %th Nombre
+      %th Fecha/hora
+      %th Longitud
+      %th Latitud
+      %th Velocidad
+      %th
+      %th
+      %th
+  %tbody
+    - @loc.each do |loc|
+      %tr
+        %td= loc.name
+        %td= loc.created_at
+        %td= loc.longitude
+        %td= loc.latitude
+        %td= loc.speed
+        %td= link_to "Editar", edit_location_path(loc)
+        %td= link_to "Borrar", location_path(loc), :method => :delete, :confirm => '¿Esta seguro?'

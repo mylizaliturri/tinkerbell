@@ -1,4 +1,12 @@
 Tinkerbell::Application.routes.draw do
+
+
+  #get "location/new"
+  #get "location/edit"
+  #get "location/show"
+  #get "location/delete"
+  #get "location/all"
+
   #get "welcome/index"
 
   # The priority is based upon order of creation:
@@ -51,6 +59,12 @@ Tinkerbell::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
    root :to => 'welcome#index'
+
+   resources :locations do
+     collection do
+       get :destroy_all
+     end
+   end
 
    resources :rings do
      collection do
