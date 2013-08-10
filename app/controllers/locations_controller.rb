@@ -20,14 +20,17 @@ class LocationsController < ApplicationController
     @loc= Location.find(params[:id])
   end
   def destroy_all
-    Location.destroy_all
+    Location.destroy_all()
   end
 
+  def index
+    @loc=Location.all().reverse!
+  end
 
   def create
     @loc=Location.new(params[:location])
     if @loc.save
-      redirect_to root_url, :notice => 'Success'
+      #redirect_to root_url, :notice => 'Success'
     else
       render action: 'new'
     end
