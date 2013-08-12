@@ -1,0 +1,7 @@
+%p
+= form_for @loc do |f|
+  = f.label :codigo, 'Code'
+  = f.text_field :codigo
+  %br
+  %p= f.submit 'Registrar'
+%p

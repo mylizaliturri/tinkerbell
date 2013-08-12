@@ -8,7 +8,20 @@ class RingsController< ApplicationController
     @ring=Ring.new(params[:ring])
     if @ring.save
       begin
-        Twitter.update(@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
+        #Twitter.update(@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
+
+        registration_ids = [
+             "1"
+            ];
+        post_args = {
+            :registration_ids => registration_ids,
+            :data => {:msg => 'Parada solicitada'}
+        }
+
+        puts post_args.to_json
+        resp = RestClient.post 'https://android.googleapis.com/gcm/send', post_args.to_json, :Authorization => 'key=AIzaSyAisLDE9Qpkk8QWUZPdMRNYwhKtgc3232g', :content_type => :json, :accept => :json
+        puts resp.inspect
+
       rescue Exception
         p "error en twitter"
       end

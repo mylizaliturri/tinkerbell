@@ -1,6 +1,16 @@
 Tinkerbell::Application.routes.draw do
 
 
+  get "buss/new"
+
+  get "buss/show"
+
+  get "buss/edit"
+
+  get "buss/delete"
+
+  get "buss/list"
+
   #get "location/new"
   #get "location/edit"
   #get "location/show"
