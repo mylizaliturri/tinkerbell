@@ -67,6 +67,8 @@ Tinkerbell::Application.routes.draw do
      end
    end
 
+   get "location/last"
+
    resources :rings do
      collection do
        get :destroy_all

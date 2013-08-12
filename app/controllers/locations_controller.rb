@@ -23,6 +23,15 @@ class LocationsController < ApplicationController
       format.json { render json: @loc }
     end
   end
+
+  def last
+    @loc= Location.last
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @loc {:latitude => loc.latitude, :longitude => loc.longitude} }
+    end
+  end
+
   def destroy_all
     Location.destroy_all()
   end
