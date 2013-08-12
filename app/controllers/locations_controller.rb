@@ -18,6 +18,9 @@ class LocationsController < ApplicationController
 
   def show
     @loc= Location.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @loc }
   end
   def destroy_all
     Location.destroy_all()
