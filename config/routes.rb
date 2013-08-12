@@ -1,15 +1,7 @@
 Tinkerbell::Application.routes.draw do
 
 
-  get "buss/new"
 
-  get "buss/show"
-
-  get "buss/edit"
-
-  get "buss/delete"
-
-  get "buss/list"
 
   #get "location/new"
   #get "location/edit"
@@ -77,6 +69,12 @@ Tinkerbell::Application.routes.draw do
    end
 
    resources :rings do
+     collection do
+       get :destroy_all
+     end
+   end
+
+   resources :buses do
      collection do
        get :destroy_all
      end
