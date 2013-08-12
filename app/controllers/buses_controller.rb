@@ -13,9 +13,6 @@ class BusesController < ApplicationController
     end
   end
 
-end
-
-
 def show
     @bus=Bus.all()
   end
