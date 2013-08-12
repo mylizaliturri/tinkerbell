@@ -6,11 +6,14 @@ class RingsController< ApplicationController
 
   def create
     @ring=Ring.new(params[:ring])
-    @app=App.last()
+    @app=App.last
+    if @ring.save
       begin
         #Twitter.update(@ring.name+ "-"+@ring.description+"-"+@ring.created_at.to_s)
 
-        registration_ids = @app.codigo
+        registration_ids = [
+             @app.codigo
+            ];
         post_args = {
             :registration_ids => registration_ids,
             :data => {:msg => 'Parada solicitada'}
