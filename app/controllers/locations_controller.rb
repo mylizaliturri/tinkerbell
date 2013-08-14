@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
     @loc= Location.last
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @loc {:latitude => loc.latitude, :longitude => loc.longitude} }
+      format.json { render json: @loc }
     end
   end
 
