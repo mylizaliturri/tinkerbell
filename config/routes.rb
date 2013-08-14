@@ -1,9 +1,6 @@
 Tinkerbell::Application.routes.draw do
 
-  resources :notifications
 
-
-  resources :apps
 
   #get "location/new"
   #get "location/edit"
@@ -63,7 +60,8 @@ Tinkerbell::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
    root :to => 'welcome#index'
-
+   resources :notifications
+   resources :apps
    resources :locations do
      collection do
        get :destroy_all
