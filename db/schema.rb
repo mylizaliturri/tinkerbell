@@ -11,15 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812124849) do
+ActiveRecord::Schema.define(:version => 20130814160516) do
 
   create_table "apps", :force => true do |t|
-    t.string   "codigo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "buses", :force => true do |t|
     t.string   "codigo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -30,6 +24,13 @@ ActiveRecord::Schema.define(:version => 20130812124849) do
     t.float    "latitude"
     t.float    "speed"
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "msg"
+    t.time     "timevalid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

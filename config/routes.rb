@@ -1,5 +1,8 @@
 Tinkerbell::Application.routes.draw do
 
+  resources :notifications
+
+
   resources :apps
 
   #get "location/new"
