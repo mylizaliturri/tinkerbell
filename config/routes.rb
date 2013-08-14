@@ -2,6 +2,12 @@ Tinkerbell::Application.routes.draw do
 
 
 
+  resources :locations
+
+
+  resources :rings
+
+
   #get "location/new"
   #get "location/edit"
   #get "location/show"

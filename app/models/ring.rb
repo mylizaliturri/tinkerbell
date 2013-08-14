@@ -1,3 +1,3 @@
 class Ring < ActiveRecord::Base
-  attr_accessible :description, :name, :time, :created_at
+  attr_accessible :description, :name, :time
 end
